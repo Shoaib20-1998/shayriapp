@@ -7,7 +7,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-app.get('/shayri', async (req, res) => {
+app.post('/shayri', async (req, res) => {
     try {
       const { message } = req.body; // Assuming you're receiving the user's message in the request body
       // Make the API request to ChatGPT
