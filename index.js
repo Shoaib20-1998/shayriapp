@@ -29,6 +29,17 @@ app.post('/shayri', async (req, res) => {
     }
   });
 
+  app.get('/check',async(req,res)=>{
+
+    try {
+      res.send("hy")
+    } catch (error) {
+      res.send(error)
+      
+    }
+
+  })
+
 
 app.listen(8080,()=>{
     console.log("running")
