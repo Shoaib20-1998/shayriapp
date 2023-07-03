@@ -9,7 +9,6 @@ app.use(express.json());
 
 app.post('/shayari', async (req, res) => {
   const { message } = req.body;
-
   // Call the ChatGPT API here using Axios
   // Replace 'YOUR_API_KEY' with your actual ChatGPT API key
   try {
@@ -22,11 +21,12 @@ app.post('/shayari', async (req, res) => {
       'Content-Type': 'application/json',
     },
   });
-
   const reply = response.data.choices[0].message.content;
+  console.log(reply)
   res.json({ reply });
   } catch (error) {
     res.send(error)
+
   }
 });
 
